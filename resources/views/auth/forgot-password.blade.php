@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-layouts.app>
     <div class="h-full flex flex-col sm:justify-center items-center pt-3 sm:pt-0 my-8">
         <div class="w-full sm:max-w-md px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
 
@@ -9,9 +7,9 @@
             </div>
 
             @session('status')
-                <div class="mb-4 font-medium text-sm text-green-600">
-                    {{ $value }}
-                </div>
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ $value }}
+            </div>
             @endsession
 
             <x-validation-errors class="mb-4" />
@@ -22,7 +20,7 @@
                 <div class="block">
                     <x-label for="email" value="{{ __('Email') }}" />
                     <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
-                        required autofocus autocomplete="username" />
+                             required autofocus autocomplete="username" />
                 </div>
 
                 <div class="flex items-center justify-end mt-4">
@@ -33,5 +31,4 @@
             </form>
         </div>
     </div>
-
-@endsection
+</x-layouts.app>
